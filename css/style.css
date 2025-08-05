@@ -1,0 +1,68 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#theme-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background: transparent;
+    color: inherit;
+    border: 1px solid currentColor;
+    cursor: pointer;
+    font-family: monospace;
+}
+
+body.dark {
+    background-color: #000;
+    color: #00ff00;
+}
+
+body.light {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+#terminal {
+    max-width: 800px;
+    margin: 60px auto 0 auto;
+    padding: 0 10px;
+}
+
+.input-line {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+input {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1em;
+    flex-grow: 1;
+    outline: none;
+}
+
+a {
+    color: cyan;
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    #terminal {
+        margin-top: 80px;
+        padding: 0 20px;
+        font-size: 0.9em;
+    }
+
+    #theme-toggle {
+        font-size: 0.8em;
+        padding: 4px 8px;
+    }
+}
