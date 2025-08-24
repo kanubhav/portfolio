@@ -40,6 +40,11 @@ body.light {
     gap: 5px;
 }
 
+#prompt {
+    color: #00ffff;
+    margin-right: 5px;
+}
+
 input {
     background: none;
     border: none;

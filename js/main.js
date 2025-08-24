@@ -7,25 +7,29 @@ document.getElementById("input").addEventListener("keydown", function (e) {
     }
 });
 
-function printOutput(text) {
+function printOutput(text, isHTML = false) {
     const output = document.getElementById("output");
     let index = 0;
     const line = document.createElement("div");
     const prefix = document.createElement("span");
-    prefix.textContent = "$ ";
+    prefix.textContent = "anubhav_kumar:-$ ";
     line.appendChild(prefix);
     const content = document.createElement("span");
     line.appendChild(content);
     output.appendChild(line);
 
-    const typeEffect = () => {
-        if (index < text.length) {
-            content.textContent += text.charAt(index);
-            index++;
-            setTimeout(typeEffect, 10);
-        }
-    };
-    typeEffect();
+    if (isHTML) {
+        content.innerHTML = text;
+    } else {
+        const typeEffect = () => {
+            if (index < text.length) {
+                content.textContent += text.charAt(index);
+                index++;
+                setTimeout(typeEffect, 10);
+            }
+        };
+        typeEffect();
+    }
 }
 
 document.getElementById("theme-toggle").addEventListener("click", () => {
