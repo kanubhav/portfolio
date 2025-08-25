@@ -30,8 +30,9 @@ body.light {
 
 #terminal {
     max-width: 800px;
-    margin: 60px auto 0 auto;
+    margin: 60px 0 0 20px;   /* align left, small padding */
     padding: 0 10px;
+    text-align: left;
 }
 
 .input-line {
@@ -70,4 +71,9 @@ a {
         font-size: 0.8em;
         padding: 4px 8px;
     }
+}
+
+.highlight {
+    color: hotpink;   /* or use #ff69b4 */
+    font-weight: bold;
 }
