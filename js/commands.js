@@ -14,7 +14,20 @@ const commands = {
             <tr><td>download</td><td>Download my resume</td></tr>
         </table>
     `,
-    about: "Anubhav Kumar is a passionate SoC Design & Verification Engineer based in Munich.",
+    about: `From debugging embedded systems at Honeywell to verifying True Random Number Generators on an Arm SoC, 
+my journey has been driven by a passion for secure and reliable hardware.
+
+With over 4 years of full-time and student experience in embedded systems, SoC design verification, and hardware 
+security, I’ve developed strong skills in SystemVerilog, UVM, AXI/APB protocols, and security validation techniques.
+
+Currently wrapping up my master’s at TUM, I’ve complemented theory with hands-on work at Infineon, Adva, and 
+Rohde & Schwarz—writing testbenches, building verification frameworks, and even conducting side-channel injection 
+attacks to evaluate robustness.
+
+I enjoy solving complex problems at the intersection of hardware and security, and I’m always looking to learn, 
+build, and contribute to systems that are not just functional but secure, efficient, and resilient.
+
+Let’s connect if you’re working on or hiring for cutting-edge ASIC/SoC verification or secure hardware projects.`,
     experience: "Infineon, Adva Network Security, Rohde & Schwarz, Honeywell.",
     education: "BSc from Amrita Vishwa Vidyapeetham, MSc from TUM.",
     skills: "C, C++, Verilog, SystemVerilog, UVM, Git, AXI, APB, ARM, FPGA.",
@@ -26,10 +39,12 @@ const commands = {
 };
 
 function processCommand(cmd) {
-    const key = cmd.toLowerCase();
-    if (commands[key]) {
-        printOutput(commands[key], key === "help" || key === "download");
-    } else {
-        printOutput("Command not recognized. Type 'help' for a list of commands.");
-    }
+  const key = cmd.toLowerCase();
+  if (commands[key]) {
+    // HTML for 'help' or anything that contains markup
+    const isHTML = key === "help" || key === "download";
+    printOutput(commands[key], { isHTML, withPrompt: true, type: false });
+  } else {
+    printOutput("Command not recognized. Type \"help\" for a list of commands.", { withPrompt: true });
+  }
 }

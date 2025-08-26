@@ -1,79 +1,62 @@
-
 body {
-    margin: 0;
-    padding: 0;
-    font-family: monospace;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-#theme-toggle {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 5px 10px;
-    background: transparent;
-    color: inherit;
-    border: 1px solid currentColor;
-    cursor: pointer;
-    font-family: monospace;
-}
-
-body.dark {
-    background-color: #000;
-    color: #00ff00;
-}
-
-body.light {
-    background-color: #f4f4f4;
-    color: #333;
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+  background: #000;   /* dark theme */
+  color: #ffffff;     /* default white text */
 }
 
 #terminal {
-    max-width: 800px;
-    margin: 60px 0 0 20px;   /* align left, small padding */
-    padding: 0 10px;
-    text-align: left;
+  max-width: 800px;
+  margin: 60px 0 0 20px; /* left aligned */
+  padding: 0 10px;
+  text-align: left;
+}
+
+/* Green prompt */
+.prompt {
+  color: #00ff00;  /* bright green */
+  font-weight: 600;
+}
+
+/* Commands and responses in white */
+.cmd {
+  color: #ffffff;
+}
+
+.response {
+  color: #ffffff;
 }
 
 .input-line {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
-#prompt {
-    color: #00ffff;
-    margin-right: 5px;
-}
-
-input {
-    background: none;
-    border: none;
-    color: inherit;
-    font-size: 1em;
-    flex-grow: 1;
-    outline: none;
-}
-
-a {
-    color: cyan;
-    text-decoration: underline;
-}
-
-@media (max-width: 600px) {
-    #terminal {
-        margin-top: 80px;
-        padding: 0 20px;
-        font-size: 0.9em;
-    }
-
-    #theme-toggle {
-        font-size: 0.8em;
-        padding: 4px 8px;
-    }
+#input {
+  background: none;
+  border: none;
+  color: #ffffff;       /* typed text appears white */
+  caret-color: #ffffff; /* blinking cursor is white */
+  font-size: 1em;
+  outline: none;
+  flex: 1;
 }
 
 .highlight {
-    color: hotpink;   /* or use #ff69b4 */
-    font-weight: bold;
+  color: hotpink;
+  font-weight: bold;
 }
+
+a { color: cyan; text-decoration: underline; }
+
+table {
+  border-collapse: collapse;
+  color: #ffffff;
+}
+table, th, td {
+  border: 1px solid #ffffff;
+  padding: 6px 8px;
+}
+
