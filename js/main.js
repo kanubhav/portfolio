@@ -13,11 +13,34 @@ inputEl.addEventListener("keydown", function (e) {
       return;
     }
 
-    // Case 2: Valid command
-    // Print only the result (no prefix)
+    /// Case 2: Valid command
+    // 1) Echo the prompt + typed command
+    echoCommand(cmd);
+
+    // 2) Process command and print result
     processCommand(cmd);
   }
 });
+
+// Echo the command with prompt (like real Linux terminal)
+function echoCommand(cmd) {
+  const line = document.createElement("div");
+
+  const pref = document.createElement("span");
+  pref.className = "prompt";
+  pref.textContent = "engineer@anubhav_kumar:~$ ";
+
+  const typed = document.createElement("span");
+  typed.className = "cmd";
+  typed.textContent = cmd;
+
+  line.appendChild(pref);
+  line.appendChild(typed);
+  outputEl.appendChild(line);
+
+  // Auto scroll
+  outputEl.scrollTop = outputEl.scrollHeight;
+}
 
 // Add a new prompt line with blinking cursor
 function addPrompt() {

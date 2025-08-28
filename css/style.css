@@ -4,6 +4,8 @@ body {
   font-family: monospace;
   background: #000;   /* dark theme */
   color: #ffffff;     /* default white text */
+  font-size: 17px;
+  line-height: 1.6;
 }
 
 #terminal {
@@ -13,19 +15,36 @@ body {
   text-align: left;
 }
 
+/* ASCII ART smaller & tight */
+.ascii {
+  display: block;
+  font-size: 12px;      /* smaller font */
+  line-height: 1.1;     /* tight packing */
+  white-space: pre;     /* preserve spacing */
+  color: #00ff00; 
+}
+
 /* Green prompt */
 .prompt {
   color: #00ff00;  /* bright green */
   font-weight: 600;
+  font-size: 18px;      /* bigger */
+  line-height: 1.6;
 }
 
 /* Commands and responses in white */
 .cmd {
   color: #ffffff;
+  font-weight: 600;
+  font-size: 18px;      /* bigger */
+  line-height: 1.6;
 }
 
 .response {
   color: #ffffff;
+  font-weight: 600;
+  font-size: 18px;      /* bigger */
+  line-height: 1.6;
 }
 
 .input-line {
@@ -39,9 +58,11 @@ body {
   border: none;
   color: #ffffff;       /* typed text appears white */
   caret-color: #ffffff; /* blinking cursor is white */
-  font-size: 1em;
   outline: none;
   flex: 1;
+  font-weight: 600;
+  font-size: 18px;      /* bigger */
+  line-height: 1.6;
 }
 
 .highlight {
