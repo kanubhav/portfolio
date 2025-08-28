@@ -1,4 +1,3 @@
-
 const commands = {
     help: `
         <table border="1" cellspacing="0" cellpadding="5">
@@ -12,6 +11,8 @@ const commands = {
             <tr><td>publications</td><td>Research papers & publications</td></tr>
             <tr><td>contact</td><td>My contact details</td></tr>
             <tr><td>download</td><td>Download my resume</td></tr>
+			<tr><td>clear</td><td>Clear the window</td></tr>
+			
         </table>
     `,
 
@@ -113,12 +114,18 @@ build, and contribute to systems that are not just functional but secure, effici
 📍 Location: Munich, Bavaria, Germany<br>
 `,
 
-    download: `Download my resume here: <a href='resume.pdf' target='_blank'>Anubhav Kumar Resume</a>`
+    download: `Download my resume here: <a href='resume.pdf' target='_blank'>Anubhav Kumar Resume</a>`,
+	
+	clear: ``  // handled specially in main.js
 };
 
 
 function processCommand(cmd) {
   const key = cmd.toLowerCase();
+  if (key === "clear") {
+    outputEl.innerHTML = startupScreen; // reset screen
+    return;
+  }
   if (commands[key]) {
     // HTML for 'help' or anything that contains markup
     const isHTML = key === "help" || key === "download";
